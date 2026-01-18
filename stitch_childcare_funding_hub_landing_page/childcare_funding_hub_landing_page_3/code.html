@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Results - Childcare Checker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0D9488", // Teal 600
+                        navy: "#0F172A", // Dark Navy
+                        coral: "#F43F5E", // High-contrast Coral
+                        "background-light": "#F8FAFC",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .logo-shape {
+            border-radius: 10px 10px 3px 10px;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light text-slate-900 antialiased overflow-x-hidden min-h-screen">
+<nav class="sticky top-0 z-50 bg-navy text-white border-b border-slate-800">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 bg-primary logo-shape flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg">bedroom_baby</span>
+</div>
+<span class="font-bold text-lg tracking-tight">Childcare<span class="text-primary">Checker</span></span>
+</div>
+<button class="text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-6 py-8">
+<div class="mb-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-primary text-xs font-bold mb-4 border border-teal-200">
+<span class="material-icons text-sm">check_circle</span>
+            CALCULATION COMPLETE
+        </div>
+<h1 class="text-3xl font-extrabold text-navy leading-tight">Great news, you are likely eligible for funding!</h1>
+</div>
+<div class="flex flex-col gap-6">
+<div class="bg-primary rounded-3xl p-6 text-white shadow-xl shadow-teal-900/20 order-1">
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">savings</span>
+                Your Monthly Savings
+            </h3>
+<div class="mb-8">
+<p class="text-teal-50 text-sm font-medium mb-1">Estimated Saving</p>
+<div class="text-5xl font-extrabold text-white">£480<span class="text-xl font-normal opacity-80">/mo</span></div>
+</div>
+<div class="bg-white/10 rounded-2xl p-4 flex justify-between items-center border border-white/10">
+<div>
+<p class="text-teal-50 text-[10px] font-bold uppercase tracking-wider">Total Yearly Saving</p>
+<p class="text-2xl font-bold text-white">£5,760</p>
+</div>
+<span class="material-symbols-outlined text-3xl opacity-50">calendar_today</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 order-2">
+<div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-teal-50 text-primary text-[10px] font-bold px-2.5 py-1 rounded-lg border border-teal-100 uppercase tracking-wide">Eligible</div>
+<span class="material-symbols-outlined text-slate-300">verified_user</span>
+</div>
+<h3 class="text-xl font-bold text-navy mb-2">15 Hours Universal</h3>
+<p class="text-slate-400 text-xs font-bold mb-4 uppercase tracking-widest">Ages 3-4 years old</p>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    All children in England are entitled to 570 hours of free childcare per year. This is usually taken as 15 hours a week for 38 weeks of the year.
+                </p>
+<a class="text-primary font-bold text-sm flex items-center gap-1" href="#">
+                    Learn more <span class="material-icons text-sm">chevron_right</span>
+</a>
+</div>
+<div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-teal-50 text-primary text-[10px] font-bold px-2.5 py-1 rounded-lg border border-teal-100 uppercase tracking-wide">Eligible</div>
+<span class="material-symbols-outlined text-slate-300">verified_user</span>
+</div>
+<h3 class="text-xl font-bold text-navy mb-2">30 Hours for Working Families</h3>
+<p class="text-slate-400 text-xs font-bold mb-4 uppercase tracking-widest">Ages 3-4 years old</p>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    Working parents of 3 and 4-year-olds in England may be entitled to an additional 15 hours of free childcare, making 30 hours in total.
+                </p>
+<a class="text-primary font-bold text-sm flex items-center gap-1" href="#">
+                    Learn more <span class="material-icons text-sm">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<section class="mt-12 py-8">
+<h2 class="text-2xl font-bold text-navy mb-8">Cost Breakdown</h2>
+<div class="bg-white border border-slate-200 rounded-3xl p-6 lg:p-10">
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-end mb-3">
+<span class="text-sm font-semibold text-slate-500">Full Market Rate</span>
+<span class="text-lg font-bold text-slate-900">£1,250<small class="font-normal text-slate-400">/mo</small></span>
+</div>
+<div class="w-full bg-slate-100 h-6 rounded-full overflow-hidden">
+<div class="bg-slate-300 h-full w-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-3">
+<span class="text-sm font-bold text-primary">Your Cost After Funding</span>
+<span class="text-2xl font-extrabold text-primary">£770<small class="font-normal text-slate-400">/mo</small></span>
+</div>
+<div class="w-full bg-slate-100 h-6 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[62%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-teal-50 rounded-2xl border border-teal-100">
+<p class="text-xs text-slate-600 leading-relaxed italic">
+                    *This is an estimate based on average UK nursery rates and your self-reported eligibility criteria.
+                </p>
+</div>
+</div>
+</section>
+<section class="mt-12 mb-8">
+<div class="bg-navy rounded-[2.5rem] p-8 lg:p-16 text-center">
+<h2 class="text-2xl font-bold text-white mb-4">Get a PDF copy of your results</h2>
+<p class="text-slate-400 text-sm mb-8">We'll send a detailed breakdown of your eligibility and a guide on how to apply for your funding codes.</p>
+<form class="flex flex-col gap-3">
+<input class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-slate-500 focus:ring-2 focus:ring-primary outline-none" placeholder="Enter your email address" type="email"/>
+<button class="bg-primary hover:bg-teal-500 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-primary/20" type="submit">
+                    Email my Results
+                </button>
+</form>
+</div>
+</section>
+</main>
+<footer class="py-12 border-t border-slate-200">
+<div class="max-w-[1440px] mx-auto px-6 text-center">
+<div class="flex items-center justify-center gap-2 mb-6 opacity-60">
+<div class="w-6 h-6 bg-slate-400 logo-shape flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[14px]">bedroom_baby</span>
+</div>
+<span class="font-bold text-sm tracking-tight text-slate-600">Childcare Checker</span>
+</div>
+<p class="text-xs text-slate-400">
+            © 2024 Childcare Checker. UK-wide funding information.
+        </p>
+</div>
+</footer>
+
+</body></html>

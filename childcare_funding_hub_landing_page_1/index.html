@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Childcare Checker - Benefits Check</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0D9488", // Teal 600
+                        navy: "#0F172A", // Dark Navy
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .logo-shape {
+            border-radius: 12px 12px 4px 12px;
+        }
+        .custom-checkbox:checked {
+            background-color: #0D9488;
+            border-color: #0D9488;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased min-h-screen">
+<nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
+<div class="max-w-[1440px] mx-auto px-6 h-16 lg:h-20 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 bg-primary logo-shape flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg">bedroom_baby</span>
+</div>
+<span class="font-bold text-lg tracking-tight text-navy dark:text-white">Childcare<span class="text-primary">Checker</span></span>
+</div>
+<button class="text-slate-500 hover:text-navy dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-4 py-8 lg:py-12">
+<div class="max-w-3xl mx-auto mb-8">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Step 4 of 7</span>
+<span class="text-xs font-medium text-slate-400">Benefits Check</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[57%] transition-all duration-500"></div>
+</div>
+</div>
+<div class="max-w-3xl mx-auto bg-white dark:bg-slate-900 rounded-[2rem] shadow-xl shadow-navy/5 border border-slate-100 dark:border-slate-800 p-6 lg:p-12">
+<div class="mb-8 lg:mb-10">
+<h1 class="text-2xl lg:text-3xl font-extrabold text-navy dark:text-white mb-4 leading-tight">
+                    Do you receive any of the following benefits?
+                </h1>
+<div class="flex items-start gap-3 p-4 bg-teal-50 dark:bg-teal-900/20 rounded-2xl border border-teal-100 dark:border-teal-800/50">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        This information helps us determine if your child is eligible for 15 hours of funded childcare from age 2.
+                    </p>
+</div>
+</div>
+<form class="space-y-4 lg:space-y-0">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all group">
+<input class="w-6 h-6 rounded-md border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800 custom-checkbox" type="checkbox"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Universal Credit</span>
+</label>
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 rounded-md border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800 custom-checkbox" type="checkbox"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Income Support</span>
+</label>
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 rounded-md border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800 custom-checkbox" type="checkbox"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Jobseeker's Allowance (JSA)</span>
+</label>
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 rounded-md border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800 custom-checkbox" type="checkbox"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Employment and Support Allowance (ESA)</span>
+</label>
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 rounded-md border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800 custom-checkbox" type="checkbox"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Child Tax Credit</span>
+</label>
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 rounded-md border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800 custom-checkbox" type="checkbox"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Working Tax Credit</span>
+</label>
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 rounded-md border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800 custom-checkbox" type="checkbox"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Pension Credit</span>
+</label>
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 rounded-md border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800 custom-checkbox" type="checkbox"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Support under Immigration &amp; Asylum Act</span>
+</label>
+</div>
+<div class="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800 mb-10">
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800" name="exclusion" type="radio"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">None of these</span>
+</label>
+<label class="flex items-center p-4 lg:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-teal-50/30 dark:hover:bg-teal-900/10 cursor-pointer transition-all">
+<input class="w-6 h-6 border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-slate-800" name="exclusion" type="radio"/>
+<span class="ml-4 font-semibold text-slate-700 dark:text-slate-200">Not sure</span>
+</label>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:w-auto px-8 py-4 text-slate-500 font-bold hover:text-navy dark:hover:text-white transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Back
+                    </button>
+<button class="w-full sm:flex-1 bg-primary text-white font-bold px-10 py-5 rounded-2xl shadow-lg shadow-teal-500/20 hover:bg-teal-700 transition-all text-lg flex items-center justify-center gap-3" type="submit">
+                        Continue
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<div class="max-w-3xl mx-auto mt-12 text-center">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                Your data is secure and will only be used to calculate your eligibility. <a class="text-primary hover:underline" href="#">Privacy Policy</a>
+</p>
+</div>
+</main>
+<footer class="mt-auto py-8 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+<div class="max-w-[1440px] mx-auto px-6 text-center">
+<p class="text-xs text-slate-400 font-medium">© 2024 Childcare Checker. All rights reserved.</p>
+</div>
+</footer>
+
+</body></html>

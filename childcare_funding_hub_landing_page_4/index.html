@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Childcare Checker - UK Funding Eligibility &amp; Calculator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0D9488", // Teal 600
+                        navy: "#0F172A", // Dark Navy
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    maxWidth: {
+                        'page': '1440px',
+                    }
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 75% 50%, rgba(13, 148, 136, 0.08) 0%, transparent 60%);
+        }
+        .logo-shape {
+            border-radius: 12px 10px 12px 12px;
+        }
+        .btn-eligibility:hover .arrow-icon {
+            transform: translateX(4px);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<nav class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
+<div class="max-w-[1440px] mx-auto px-8 lg:px-12 h-24 flex items-center justify-between">
+<div class="flex items-center gap-16">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 bg-primary logo-shape flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">child_care</span>
+</div>
+<span class="font-bold text-2xl tracking-tight text-navy dark:text-white">Childcare<span class="text-primary">Checker</span></span>
+</div>
+<div class="hidden lg:flex items-center gap-10">
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#">How it works</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#">Calculator</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#">Eligibility Guides</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-navy dark:bg-primary text-white text-sm font-bold px-8 py-3.5 rounded-2xl hover:bg-teal-700 transition-all shadow-lg shadow-navy/5">
+                Check Eligibility
+            </button>
+</div>
+</div>
+</nav>
+<header class="relative overflow-hidden hero-gradient">
+<div class="max-w-[1440px] mx-auto px-8 lg:px-12 pt-20 pb-32 flex flex-col lg:flex-row items-center gap-20">
+<div class="flex-1 text-left">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-50 dark:bg-teal-900/30 text-primary text-[13px] font-bold mb-8 border border-teal-100 dark:border-teal-800">
+<span class="material-icons text-[16px]">info</span>
+                NEW GUIDELINES FOR 2024 &amp; 2025
+            </div>
+<h1 class="text-5xl xl:text-[4.5rem] font-extrabold tracking-tight mb-8 leading-[1.05] text-navy dark:text-white">
+                A simple way to check your <span class="text-primary">childcare funding</span> and understand your costs.
+            </h1>
+<p class="text-slate-600 dark:text-slate-400 text-xl xl:text-2xl max-w-xl mb-12 leading-relaxed">
+                See how many free hours you’re entitled to and what you could save.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-5">
+<button class="btn-eligibility w-full sm:w-auto bg-primary dark:bg-primary text-white font-bold px-10 py-5 rounded-2xl shadow-xl shadow-teal-500/20 hover:bg-teal-700 transition-all text-lg flex items-center justify-center gap-3">
+                    Check Eligibility
+                    <span class="material-symbols-outlined arrow-icon transition-transform">arrow_forward</span>
+</button>
+<button class="w-full sm:w-auto bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 text-navy dark:text-white font-bold px-10 py-5 rounded-2xl hover:border-primary/30 transition-all text-lg">
+                    Calculate Fees
+                </button>
+</div>
+</div>
+<div class="flex-1 hidden lg:block relative">
+<div class="w-full h-[580px] bg-slate-50 dark:bg-slate-800/50 rounded-[3rem] border border-slate-200 dark:border-slate-700 relative overflow-hidden flex items-center justify-center">
+<div class="relative w-full max-w-md">
+<div class="absolute -top-16 -left-8 w-72 h-44 bg-white dark:bg-slate-700 rounded-3xl shadow-2xl p-6 border border-slate-100 dark:border-slate-600 transform -rotate-3 z-10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+</div>
+<div class="space-y-1.5">
+<div class="h-2 w-28 bg-slate-200 dark:bg-slate-600 rounded"></div>
+<div class="h-2 w-20 bg-slate-100 dark:bg-slate-600 rounded"></div>
+</div>
+</div>
+<div class="space-y-3 mt-6">
+<div class="h-2 w-full bg-slate-50 dark:bg-slate-600 rounded"></div>
+<div class="h-2 w-full bg-slate-50 dark:bg-slate-600 rounded"></div>
+<div class="h-2 w-3/5 bg-slate-50 dark:bg-slate-600 rounded"></div>
+</div>
+</div>
+<div class="w-80 h-56 bg-navy dark:bg-slate-900 rounded-[2.5rem] shadow-2xl p-10 border border-slate-800 transform rotate-6 ml-auto relative">
+<div class="text-primary text-4xl font-extrabold mb-2">30 Hours</div>
+<div class="text-slate-400 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">Maximum Funding Level</div>
+<div class="w-full bg-slate-800 h-2 rounded-full mb-2">
+<div class="bg-primary w-full h-full rounded-full"></div>
+</div>
+<p class="text-slate-500 text-[10px] font-medium italic">Confirmed eligibility for 2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="py-24 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-[1440px] mx-auto px-12">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-bold mb-6 text-navy dark:text-white">UK Childcare Entitlements</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Funding tiers depend on your child's age, your location in the UK, and your household income. Childcare Checker translates complex policy into clear steps.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline group" href="#">
+                View funding breakdown <span class="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group bg-white dark:bg-slate-800 rounded-[2.5rem] p-10 border border-slate-200/60 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2">
+<div class="text-primary text-7xl font-extrabold mb-4 group-hover:scale-105 transition-transform origin-left">15</div>
+<div class="text-slate-400 text-xs font-bold mb-8 uppercase tracking-widest">hours / week</div>
+<h3 class="text-2xl font-bold mb-4 text-navy dark:text-white">Universal Hours</h3>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">Available to all children aged 3 to 4, regardless of parental income or working status.</p>
+</div>
+<div class="group bg-white dark:bg-slate-800 rounded-[2.5rem] p-10 border border-slate-200/60 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2">
+<div class="text-primary text-7xl font-extrabold mb-4 group-hover:scale-105 transition-transform origin-left">30</div>
+<div class="text-slate-400 text-xs font-bold mb-8 uppercase tracking-widest">hours / week</div>
+<h3 class="text-2xl font-bold mb-4 text-navy dark:text-white">Working Families</h3>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">For working parents of children aged 3 to 4 who meet specific earnings requirements.</p>
+</div>
+<div class="group bg-white dark:bg-slate-800 rounded-[2.5rem] p-10 border border-slate-200/60 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2">
+<div class="text-primary text-7xl font-extrabold mb-4 group-hover:scale-105 transition-transform origin-left">15</div>
+<div class="text-slate-400 text-xs font-bold mb-8 uppercase tracking-widest">hours / week</div>
+<h3 class="text-2xl font-bold mb-4 text-navy dark:text-white">Expansion Plan</h3>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">Now expanding to working parents of children from 9 months old through 2024/25.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-12">
+<div class="max-w-[1440px] mx-auto bg-navy dark:bg-slate-800 rounded-[3.5rem] p-16 lg:p-24 overflow-hidden relative flex flex-col lg:flex-row items-center gap-20">
+<div class="flex-1 relative z-10">
+<h2 class="text-4xl lg:text-5xl font-bold text-white mb-8">Nursery Cost Calculator</h2>
+<p class="text-slate-400 text-xl mb-12 leading-relaxed">Get a precise monthly breakdown factoring in Tax-Free Childcare, Universal Credit, and all your eligible funding hours.</p>
+<button class="bg-primary hover:bg-teal-500 text-white font-bold px-10 py-5 rounded-2xl transition-all text-lg shadow-lg shadow-primary/20">
+                Launch Calculator
+            </button>
+</div>
+<div class="flex-1 w-full lg:max-w-md relative z-10">
+<div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] p-10">
+<div class="grid grid-cols-2 gap-8 mb-10">
+<div class="flex flex-col justify-end min-h-[80px]">
+<p class="text-slate-400 text-xs font-bold mb-3 uppercase tracking-wider">Full Market Price</p>
+<p class="text-white text-3xl font-bold leading-none">£1,250<span class="text-base font-medium text-slate-500 ml-1">/mo</span></p>
+</div>
+<div class="flex flex-col justify-end items-end min-h-[80px]">
+<p class="text-primary text-xs font-bold mb-3 uppercase tracking-wider text-right">After Funding</p>
+<p class="text-white text-5xl font-extrabold leading-none">£425<span class="text-base font-medium text-slate-500 ml-1">/mo</span></p>
+</div>
+</div>
+<div class="w-full bg-slate-700/50 h-3 rounded-full overflow-hidden mb-8">
+<div class="bg-primary h-full w-[34%] shadow-[0_0_20px_rgba(13,148,136,0.5)]"></div>
+</div>
+<div class="flex items-center gap-3 py-4 border-t border-white/10">
+<span class="material-icons text-primary text-xl">savings</span>
+<p class="text-primary text-base font-bold">Monthly saving of £825</p>
+</div>
+</div>
+</div>
+<div class="absolute -right-40 -top-40 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+</div>
+</section>
+<section class="py-24 px-12">
+<div class="max-w-[1440px] mx-auto bg-teal-50 dark:bg-teal-900/10 rounded-[4rem] p-20 flex flex-col items-center text-center border border-teal-100 dark:border-teal-800/50">
+<h2 class="text-4xl font-extrabold mb-6 text-navy dark:text-white">Stay informed on policy changes</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg mb-12 max-w-2xl">Policy in the UK is changing. Join 50,000+ parents who receive our Childcare Checker updates and expert nursery saving tips.</p>
+<form class="flex flex-col sm:flex-row gap-4 w-full max-w-lg">
+<input class="flex-1 px-8 py-5 rounded-2xl border-none ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none text-base" placeholder="Enter your email address" type="email"/>
+<button class="bg-navy dark:bg-white dark:text-navy text-white font-bold px-8 py-5 rounded-2xl whitespace-nowrap hover:bg-slate-800 transition-all shadow-lg shadow-navy/10" type="submit">
+                Subscribe
+            </button>
+</form>
+</div>
+</section>
+<footer class="py-20 border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-[1440px] mx-auto px-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-9 h-9 bg-primary logo-shape flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg">child_care</span>
+</div>
+<span class="font-bold text-xl text-slate-800 dark:text-white tracking-tight">Childcare Checker</span>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">Simplifying UK childcare funding for parents and providers through clear guidance and tools.</p>
+</div>
+<div>
+<h4 class="font-bold text-navy dark:text-white mb-6">Tools</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Eligibility Checker</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Monthly Calculator</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Savings Guide</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-navy dark:text-white mb-6">Information</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">2024 Policy Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">How it Works</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Support &amp; FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-navy dark:text-white mb-6">Support</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Use</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-100 dark:border-slate-800">
+<p class="text-sm text-slate-400 text-center md:text-left">
+                © 2024 Childcare Checker. All rights reserved. Helping UK parents navigate childcare costs.
+            </p>
+<div class="flex gap-8 mt-6 md:mt-0">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-icons">alternate_email</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-icons">share</span></a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { CalculatorData, ExtraCost, FundingType } from '../types';
 import { PROVIDER_TYPES, CHILDCARE_DATA_2024 } from '../constants';
 
@@ -27,15 +27,14 @@ const Calculator: React.FC = () => {
     fundingType: 'none',
     includeTaxFreeChildcare: true
   });
-  const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const totalSteps = 6;
-  const nextStep = () => setStep(s => Math.min(s + 1, totalSteps));
-  const prevStep = () => setStep(s => Math.max(s - 1, 1));
+  const nextStep = () => setStep((s: number) => Math.min(s + 1, totalSteps));
+  const prevStep = () => setStep((s: number) => Math.max(s - 1, 1));
 
   const updateData = (updates: Partial<CalculatorData>) => {
-    setData(prev => ({ ...prev, ...updates }));
+    setData((prev: CalculatorData) => ({ ...prev, ...updates }));
   };
 
   const getAverageRateInfo = () => {
@@ -67,7 +66,7 @@ const Calculator: React.FC = () => {
     const baseWeekly = data.hoursPerWeek * rate;
     
     let weeklyExtras = 0;
-    data.extraCosts.forEach(item => {
+    data.extraCosts.forEach((item: ExtraCost) => {
       if (item.enabled) {
         weeklyExtras += item.price !== undefined ? item.price : (EXTRA_COST_AVERAGES[item.name] || 0);
       }
@@ -100,7 +99,7 @@ const Calculator: React.FC = () => {
         return (
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Weekly hours</h2>
-            <input type="range" min="0" max="60" value={data.hoursPerWeek} onChange={(e) => updateData({ hoursPerWeek: parseInt(e.target.value) })} className="w-full accent-teal-600" />
+            <input type="range" min="0" max="60" value={data.hoursPerWeek} onChange={(e: ChangeEvent<HTMLInputElement>) => updateData({ hoursPerWeek: parseInt(e.target.value) })} className="w-full accent-teal-600" />
             <div className="text-center p-10 bg-slate-50 rounded-3xl">
               <span className="text-7xl font-black text-teal-700">{data.hoursPerWeek}</span>
               <span className="text-xl text-slate-400 font-bold ml-4">hrs/wk</span>
@@ -112,7 +111,7 @@ const Calculator: React.FC = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Usage period</h2>
             <div className="grid grid-cols-1 gap-3">
-              {[38, 48, 51].map(w => (
+              {[38, 48, 51].map((w: number) => (
                 <button key={w} onClick={() => updateData({ weeksPerYear: w })} className={`p-5 text-left border-2 rounded-2xl ${data.weeksPerYear === w ? 'border-teal-600 bg-teal-50' : 'border-slate-200'}`}>
                   <span className="block font-bold text-lg">{w} weeks</span>
                 </button>
@@ -125,10 +124,10 @@ const Calculator: React.FC = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Setting & location</h2>
             <div className="space-y-4">
-              <select value={data.childcareType} onChange={(e) => updateData({ childcareType: e.target.value })} className="w-full p-4 border-2 border-slate-200 rounded-xl">
-                {PROVIDER_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
+              <select value={data.childcareType} onChange={(e: ChangeEvent<HTMLSelectElement>) => updateData({ childcareType: e.target.value })} className="w-full p-4 border-2 border-slate-200 rounded-xl">
+                {PROVIDER_TYPES.map((t: string) => <option key={t} value={t}>{t}</option>)}
               </select>
-              <input type="text" placeholder="Postcode (e.g. M1)" value={data.postcode} onChange={(e) => updateData({ postcode: e.target.value.toUpperCase() })} className="w-full p-4 border-2 border-slate-200 rounded-xl" />
+              <input type="text" placeholder="Postcode (e.g. M1)" value={data.postcode} onChange={(e: ChangeEvent<HTMLInputElement>) => updateData({ postcode: e.target.value.toUpperCase() })} className="w-full p-4 border-2 border-slate-200 rounded-xl" />
             </div>
           </div>
         );
@@ -144,7 +143,7 @@ const Calculator: React.FC = () => {
                 <button onClick={() => updateData({ knownHourlyRate: true })} className="block mt-4 text-sm font-bold text-teal-700 underline">Enter my specific rate</button>
               </div>
             ) : (
-              <input type="number" step="0.01" value={data.hourlyRate} onChange={(e) => updateData({ hourlyRate: parseFloat(e.target.value) })} className="w-full p-4 border-2 border-slate-200 rounded-xl text-xl font-bold" />
+              <input type="number" step="0.01" value={data.hourlyRate} onChange={(e: ChangeEvent<HTMLInputElement>) => updateData({ hourlyRate: parseFloat(e.target.value) })} className="w-full p-4 border-2 border-slate-200 rounded-xl text-xl font-bold" />
             )}
           </div>
         );
@@ -153,9 +152,9 @@ const Calculator: React.FC = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Extra expenses</h2>
             <div className="space-y-2">
-              {data.extraCosts.map(item => (
+              {data.extraCosts.map((item: ExtraCost) => (
                 <label key={item.name} className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl cursor-pointer">
-                  <input type="checkbox" checked={item.enabled} onChange={(e) => setData(p => ({...p, extraCosts: p.extraCosts.map(ec => ec.name === item.name ? {...ec, enabled: e.target.checked} : ec)}))} />
+                  <input type="checkbox" checked={item.enabled} onChange={(e: ChangeEvent<HTMLInputElement>) => setData((p: CalculatorData) => ({...p, extraCosts: p.extraCosts.map((ec: ExtraCost) => ec.name === item.name ? {...ec, enabled: e.target.checked} : ec)}))} />
                   <span className="font-bold">{item.name}</span>
                 </label>
               ))}
@@ -167,7 +166,7 @@ const Calculator: React.FC = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Apply support</h2>
             <div className="grid grid-cols-3 gap-2">
-              {['none', '15h', '30h'].map(f => (
+              {['none', '15h', '30h'].map((f: string) => (
                 <button key={f} onClick={() => updateData({ fundingType: f as FundingType })} className={`p-4 rounded-xl border-2 font-bold ${data.fundingType === f ? 'bg-teal-600 text-white border-teal-600' : 'bg-white border-slate-200'}`}>{f === 'none' ? 'None' : f.toUpperCase()}</button>
               ))}
             </div>
@@ -181,7 +180,7 @@ const Calculator: React.FC = () => {
     const res = calculateCosts();
     return (
       <div className="max-w-4xl mx-auto px-4 py-16">
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 animate-in zoom-in-95 duration-700">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
           <div className="grid grid-cols-1 md:grid-cols-3 bg-slate-900 text-white p-1">
             <div className="p-8 text-center border-b md:border-b-0 md:border-r border-slate-800">
               <span className="text-teal-400 text-xs font-bold block mb-1">Weekly estimate</span>

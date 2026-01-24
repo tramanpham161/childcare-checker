@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import Eligibility from './pages/Eligibility';
-import Calculator from './pages/Calculator';
-import FAQ from './pages/FAQ';
-import About from './pages/About';
-import { Logo } from './constants';
+import Home from './pages/Home.tsx';
+import Eligibility from './pages/Eligibility.tsx';
+import Calculator from './pages/Calculator.tsx';
+import FAQ from './pages/FAQ.tsx';
+import About from './pages/About.tsx';
+import { Logo } from './constants.tsx';
 
 const Navbar = () => {
   const location = useLocation();
